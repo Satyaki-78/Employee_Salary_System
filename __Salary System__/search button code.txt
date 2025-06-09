@@ -1,0 +1,94 @@
+rs.MoveFirst
+Do Until rs.EOF
+If rs.Fields(0) = fempcode Then
+str = True
+Text1.Text = rs.Fields(0)
+Text2.Text = rs.Fields(1)
+Text3.Text = rs.Fields(2)
+If Not (IsNull(rs.Fields(3))) Then
+Text27.Text = rs.Fields(3)
+End If
+Text28.Text = rs.Fields(4)
+Text6.Text = Left(rs.Fields(5), 2)
+Text7.Text = Mid(rs.Fields(5), 4, 2)
+Text8.Text = Right(rs.Fields(5), 4)
+Combo9.Text = rs.Fields(6)
+Text29.Text = rs.Fields(7)
+Text21.Text = rs.Fields(8)
+If Not (IsNull(rs.Fields(9))) Then
+Text4.Text = rs.Fields(9)
+End If
+If Not (IsNull(rs.Fields(10))) Then
+Text16.Text = rs.Fields(10)
+End If
+If Not (IsNull(rs.Fields(11))) Then
+Text17.Text = rs.Fields(11)
+End If
+Text24.Text = rs.Fields(12)
+Text25.Text = rs.Fields(13)
+If Not (IsNull(rs.Fields(14))) Then
+Text26.Text = rs.Fields(14)
+End If
+If Not (IsNull(rs.Fields(15))) Then
+Text30.Text = rs.Fields(15)
+End If
+If Not (IsNull(rs.Fields(16))) Then
+Text31.Text = rs.Fields(16)
+End If
+If Not (IsNull(rs.Fields(17))) Then
+Text35.Text = rs.Fields(17)
+End If
+Text22.Text = rs.Fields(18)
+Text23.Text = rs.Fields(19)
+If Not (IsNull(rs.Fields(20))) Then
+Image1.Picture = LoadPicture(rs.Fields(20))
+Label7.Caption = rs.Fields(20)
+End If
+If rs.Fields(21) = "Fresher" Then
+Check1.Value = 1
+Else
+Check2.Value = 1
+End If
+Combo6.Text = rs.Fields(22)
+Combo5.Text = rs.Fields(23)
+Combo1.Text = rs.Fields(24)
+Combo2.Text = rs.Fields(25)
+Text9.Text = Left(rs.Fields(26), 2)
+Text10.Text = Mid(rs.Fields(26), 4, 2)
+Text11.Text = Right(rs.Fields(26), 4)
+If Not (IsNull(rs.Fields(27))) Then
+Text12.Text = Left(rs.Fields(27), 2)
+Text13.Text = Mid(rs.Fields(27), 4, 2)
+Text14.Text = Right(rs.Fields(27), 4)
+End If
+If Not (IsNull(rs.Fields(28))) Then
+Text5.Text = rs.Fields(28)
+End If
+If Not (IsNull(rs.Fields(29))) Then
+Text19.Text = rs.Fields(29)
+End If
+If Not (IsNull(rs.Fields(30))) Then
+Text18.Text = rs.Fields(30)
+End If
+If Not (IsNull(rs.Fields(31))) Then
+Text20.Text = rs.Fields(31)
+End If
+Combo3.Text = rs.Fields(32)
+Combo4.Text = rs.Fields(33)
+Text32.Text = rs.Fields(34)
+Text33.Text = rs.Fields(35)
+Text34.Text = rs.Fields(36)
+Combo7.Text = rs.Fields(37)
+Text36.Text = rs.Fields(38)
+Text38.Text = rs.Fields(39)
+Combo8.Text = rs.Fields(40)
+Call Disable
+Text1.Enabled = True
+If Label7.Caption = "" Then
+Command6.Enabled = True
+Else
+Command6.Enabled = False
+End If
+Command4.Enabled = True
+SSTab1.Tab = 0
+Text1.SetFocus

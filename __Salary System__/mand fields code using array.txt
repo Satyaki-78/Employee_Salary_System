@@ -1,0 +1,69 @@
+'Arrays to handle mandatory fields
+Dim Mand_Fields(25) As String
+
+Mand_Fields(0) = Text1.Text
+Mand_Fields(1) = Text2.Text
+Mand_Fields(2) = Text3.Text
+Mand_Fields(3) = Text28.Text
+Mand_Fields(4) = Text6.Text & Text7.Text & Text8.Text
+Mand_Fields(5) = Combo9.Text
+Mand_Fields(6) = Text29.Text
+Mand_Fields(7) = Text21.Text
+Mand_Fields(8) = Text24.Text
+Mand_Fields(9) = Text25.Text
+Mand_Fields(10) = Text22.Text
+Mand_Fields(11) = Text23.Text
+Mand_Fields(12) = EmpCategory
+Mand_Fields(13) = Combo6.Text
+Mand_Fields(14) = Combo5.Text
+Mand_Fields(15) = Combo1.Text
+Mand_Fields(16) = Combo2.Text
+Mand_Fields(17) = Text9.Text & Text10.Text & Text11.Text
+Mand_Fields(18) = Text32.Text
+Mand_Fields(19) = Text33.Text
+Mand_Fields(20) = Text34.Text
+Mand_Fields(21) = Combo7.Text
+Mand_Fields(22) = Text36.Text
+Mand_Fields(23) = Text38.Text
+Mand_Fields(24) = Combo8.Text
+
+Dim MandField_Ctrl(25) As Control
+
+Set MandField_Ctrl(0) = Text1
+Set MandField_Ctrl(1) = Text2
+Set MandField_Ctrl(2) = Text3
+Set MandField_Ctrl(3) = Text28
+Set MandField_Ctrl(4) = Text6
+Set MandField_Ctrl(5) = Combo9
+Set MandField_Ctrl(6) = Text29
+Set MandField_Ctrl(7) = Text21
+Set MandField_Ctrl(8) = Text24
+Set MandField_Ctrl(9) = Text25
+Set MandField_Ctrl(10) = Text22
+Set MandField_Ctrl(11) = Text23
+Set MandField_Ctrl(12) = Check1
+Set MandField_Ctrl(13) = Combo6
+Set MandField_Ctrl(14) = Combo5
+Set MandField_Ctrl(15) = Combo1
+Set MandField_Ctrl(16) = Combo2
+Set MandField_Ctrl(17) = Text9
+Set MandField_Ctrl(18) = Text32
+Set MandField_Ctrl(19) = Text33
+Set MandField_Ctrl(20) = Text34
+Set MandField_Ctrl(21) = Combo7
+Set MandField_Ctrl(22) = Text36
+Set MandField_Ctrl(23) = Text38
+Set MandField_Ctrl(24) = Combo8
+
+Dim i As Integer
+For i = 0 To UBound(Mand_Fields())
+If Mand_Fields(i) = "" Then
+Flag = True
+MsgBox "Mandatory fields can't be left empty !!"
+MandField_Ctrl(i).SetFocus
+Exit For
+GoTo FunctionStop
+Else
+Flag = False
+End If
+Next

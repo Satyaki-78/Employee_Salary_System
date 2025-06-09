@@ -1,0 +1,40 @@
+'Seeing if DOR is empty
+If Text12.Text = "" And Text13.Text = "" And Text14.Text = "" Then
+dorEmpty = True
+Else
+'Checking for proper DOR...when DOR is not empty
+Call ProperDateCheck("DOR")
+sdor = Text12.Text & "/" & Text13.Text & "/" & Text14.Text
+DOR = sdor
+sdoj = Text9.Text & "/" & Text10.Text & "/" & Text11.Text
+DOJ = sdoj
+If Format(DOR, "dd/mm/yyyy") < Format(DOJ, "dd/mm/yyyy") Then
+dorEmpty = True
+MsgBox "DOR can't be less than DOJ...Please give proper date !!"
+Text12.SetFocus
+Exit Sub
+Else
+dorEmpty = False
+End If
+End If
+
+'Updating DOJ field when it's already empty in database
+'Seeing if DOJ is empty
+If Text9.Text = "" And Text10.Text = "" And Text11.Text = "" Then
+dojEmpty = True
+Else
+'Checking for proper date entry for DOJ
+Call ProperDateCheck("DOJ")
+sdoj = Text9.Text & "/" & Text10.Text & "/" & Text11.Text
+DOJ = sdoj
+DOB = sdob
+'Checking for valid DOJ...when DOJ is not empty
+If Format(DOJ, "dd/mm/yyyy") < Format(DOB, "dd/mm/yyyy") Then
+dojEmpty = True
+MsgBox "DOJ can't be less than DOB...Enter proper date !!"
+Text9.SetFocus
+Exit Sub
+Else
+dojEmpty = False
+End If
+End If
